@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+}
+
+section {
+  margin: 20px;
+}
+
+.effect-group {
+  margin: 10px 0;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#remote-videos video {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
