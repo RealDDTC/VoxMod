@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoxMod</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoxMod - Real-time Voice Modulation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to VoxMod!</h1>
+    <div class="container">
+        <header>
+            <h1>VoxMod</h1>
+            <p>Real-time Voice Modulation and Audio Effects</p>
+        </header>
 
-  <section id="soundboard">
-    <h2>Soundboard</h2>
-    <input type="file" id="sound-upload" accept="audio/*">
-    <button onclick="playSound('uploaded-sound')">Play Uploaded Sound</button>
-  </section>
+        <div class="controls">
+            <!-- Mic Input -->
+            <div class="control">
+                <label for="mic-input">Microphone Input:</label>
+                <input type="range" id="mic-input" min="0" max="100" value="50">
+            </div>
 
-  <section id="effects-controls">
-    <h2>Advanced Audio Effects</h2>
-    <div class="effect-group">
-      <label for="chorus-slider">Chorus</label>
-      <input type="range" id="chorus-slider" min="0" max="100" value="0">
+            <!-- Effects -->
+            <div class="effects">
+                <div class="control">
+                    <label for="pitch">Pitch:</label>
+                    <input type="range" id="pitch" min="-12" max="12" value="0">
+                </div>
+                <div class="control">
+                    <label for="reverb">Reverb:</label>
+                    <input type="range" id="reverb" min="0" max="100" value="50">
+                </div>
+                <div class="control">
+                    <label for="distortion">Distortion:</label>
+                    <input type="range" id="distortion" min="0" max="100" value="20">
+                </div>
+            </div>
+
+            <!-- Soundboard -->
+            <div class="soundboard">
+                <h2>Soundboard</h2>
+                <button id="play-sound1">Sound 1</button>
+                <button id="play-sound2">Sound 2</button>
+                <!-- Add more buttons for sound effects -->
+            </div>
+        </div>
+
+        <!-- File Upload -->
+        <div class="file-upload">
+            <h3>Upload Your Sound Effect</h3>
+            <input type="file" id="file-upload" accept="audio/*">
+        </div>
+
+        <!-- Real-time Audio Visualizer -->
+        <div class="audio-visualizer">
+            <canvas id="visualizer"></canvas>
+        </div>
     </div>
-    <div class="effect-group">
-      <label for="flanger-slider">Flanger</label>
-      <input type="range" id="flanger-slider" min="0" max="100" value="0">
-    </div>
-    <div class="effect-group">
-      <label for="distortion-slider">Distortion</label>
-      <input type="range" id="distortion-slider" min="0" max="100" value="0">
-    </div>
-  </section>
 
-  <section id="web-rtc">
-    <h2>WebRTC Video Call</h2>
-    <button onclick="startCall()">Start Call</button>
-    <div id="remote-videos"></div>
-  </section>
-
-  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
