@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoxMod</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Welcome to VoxMod!</h1>
+
+  <section id="soundboard">
+    <h2>Soundboard</h2>
+    <input type="file" id="sound-upload" accept="audio/*">
+    <button onclick="playSound('uploaded-sound')">Play Uploaded Sound</button>
+  </section>
+
+  <section id="effects-controls">
+    <h2>Advanced Audio Effects</h2>
+    <div class="effect-group">
+      <label for="chorus-slider">Chorus</label>
+      <input type="range" id="chorus-slider" min="0" max="100" value="0">
+    </div>
+    <div class="effect-group">
+      <label for="flanger-slider">Flanger</label>
+      <input type="range" id="flanger-slider" min="0" max="100" value="0">
+    </div>
+    <div class="effect-group">
+      <label for="distortion-slider">Distortion</label>
+      <input type="range" id="distortion-slider" min="0" max="100" value="0">
+    </div>
+  </section>
+
+  <section id="web-rtc">
+    <h2>WebRTC Video Call</h2>
+    <button onclick="startCall()">Start Call</button>
+    <div id="remote-videos"></div>
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
