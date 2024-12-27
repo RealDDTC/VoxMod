@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoxMod - Real-time Voice Modulation</title>
+    <title>VoxMod - Real-Time Voice Modulation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>VoxMod</h1>
-            <p>Real-time Voice Modulation and Audio Effects</p>
+            <p>Real-Time Voice Modulation and Sharing</p>
         </header>
 
         <div class="controls">
-            <!-- Mic Input -->
-            <div class="control">
-                <label for="mic-input">Microphone Input:</label>
-                <input type="range" id="mic-input" min="0" max="100" value="50">
+            <!-- Microphone Input Control -->
+            <div class="section">
+                <h2>Microphone Input</h2>
+                <div class="control">
+                    <label for="mic-input">Volume:</label>
+                    <input type="range" id="mic-input" min="0" max="100" value="50">
+                </div>
+                <div class="control">
+                    <label for="mic-gain">Gain:</label>
+                    <input type="range" id="mic-gain" min="0" max="100" value="30">
+                </div>
             </div>
 
-            <!-- Effects -->
-            <div class="effects">
+            <!-- Effects Controls -->
+            <div class="section">
+                <h2>Effects</h2>
                 <div class="control">
                     <label for="pitch">Pitch:</label>
                     <input type="range" id="pitch" min="-12" max="12" value="0">
@@ -36,26 +44,29 @@
                 </div>
             </div>
 
-            <!-- Soundboard -->
-            <div class="soundboard">
+            <!-- Soundboard Section -->
+            <div class="section">
                 <h2>Soundboard</h2>
-                <button id="play-sound1">Sound 1</button>
-                <button id="play-sound2">Sound 2</button>
-                <!-- Add more buttons for sound effects -->
+                <div class="soundboard">
+                    <button id="play-sound1">Play Sound 1</button>
+                    <button id="play-sound2">Play Sound 2</button>
+                    <input type="file" id="file-upload" accept="audio/*">
+                </div>
             </div>
         </div>
 
-        <!-- File Upload -->
-        <div class="file-upload">
-            <h3>Upload Your Sound Effect</h3>
-            <input type="file" id="file-upload" accept="audio/*">
-        </div>
-
-        <!-- Real-time Audio Visualizer -->
-        <div class="audio-visualizer">
+        <!-- Audio Visualizer -->
+        <div class="visualizer">
             <canvas id="visualizer"></canvas>
         </div>
     </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+
+    <!-- WebRTC SDK -->
+    <script src="https://cdn.webrtc.org/adapter/adapter-latest.js"></script>
 
     <script src="script.js"></script>
 </body>
